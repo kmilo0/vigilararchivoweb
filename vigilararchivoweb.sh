@@ -3,7 +3,7 @@
 #carpeta donde se guardan los archivos
 dir=~/files
 
-mkdir ~/files 2>/dev/null
+mkdir $dir 2>/dev/null
 url=$1
 filename=$(basename $url | awk -F'.' '{print $1}')
 ext=$(basename $url | awk -F'.' '{if(NF==2) print $2; else print "html"}')
