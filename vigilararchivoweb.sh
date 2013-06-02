@@ -1,11 +1,12 @@
 #!/bin/bash
 
+#carpeta donde se guardan los archivos
+dir=~/files
+
+mkdir ~/files 2>/dev/null
 url=$1
 filename=$(basename $url | awk -F'.' '{print $1}')
 ext=$(basename $url | awk -F'.' '{if(NF==2) print $2; else print "html"}')
-
-dir=~/files
-mkdir ~/files 2>/dev/null
 
 cantidadArchivos=$(ls $dir/$filename* 2>/dev/null | wc -l )
 if [ $cantidadArchivos -eq 0 ]; then
